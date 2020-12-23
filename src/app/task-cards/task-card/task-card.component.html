@@ -1,0 +1,21 @@
+<div class="task-card">
+  <h3 class="title">{{ title }}</h3>
+  <h5
+    class="priority"
+    [ngClass]="{
+      priorityHigh: priority === 'high',
+      priorityMedium: priority === 'medium',
+      priorityLow: priority === 'low'
+    }"
+  >
+    {{ priority }}
+  </h5>
+  <p class="description">
+    {{ description }}
+  </p>
+  <div class="icons">
+    <div class="fa fa-trash delete" (click)="onTaskDeleted()"></div>
+    <div class="fa fa-check-square done" (click)="onTaskCompleted()"></div>
+    <div class="fa fa-edit edit" (click)="onTaskEdited()"></div>
+  </div>
+</div>

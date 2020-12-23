@@ -1,0 +1,80 @@
+$primary: #99d9ba;
+$secondary: #e4fff2;
+$placeholder: #8f8f8f;
+
+.inputs {
+  z-index: 99999;
+  background: #333333af;
+  border: 3px solid $primary;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  label {
+    color: $primary;
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 24px;
+    border: 3px solid $primary;
+    color: $placeholder;
+    background: $secondary;
+    outline: none;
+    border-radius: 5px;
+    &:focus {
+      background: #d0fbe6;
+    }
+  }
+  .buttons {
+    width: 100%;
+  }
+  button {
+    background: $secondary;
+    color: #8f8f8f;
+    border: 3px solid #99d9ba;
+    font-size: 24px;
+    border-radius: 5px;
+    padding: 0 20px;
+    transition: 0.3s all;
+    margin: 15px 0;
+    width: 100%;
+    outline: none;
+    &:hover {
+      background: #99d9ba;
+      color: white;
+    }
+    &:focus {
+      background: #d0fbe6;
+    }
+  }
+}
+
+.closeMenuModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  z-index: 99999;
+}
+
+.cards {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}

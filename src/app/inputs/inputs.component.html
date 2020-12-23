@@ -1,0 +1,49 @@
+<div *ngIf="menu" class="closeMenuModal" (click)="onCloseMenu()"></div>
+<div *ngIf="menu" class="inputs row">
+  <div class="col-12 input">
+    <label for="title">Enter Task Title</label>
+    <input
+      type="text"
+      name="title"
+      placeholder="Task Title"
+      [(ngModel)]="title"
+    />
+  </div>
+  <div class="col-12 input">
+    <label for="priority">Enter Task Priority</label>
+    <input
+      type="text"
+      name="priority"
+      placeholder="Task Priority"
+      [(ngModel)]="priority"
+    />
+  </div>
+  <div class="col-12 input">
+    <label for="description">Enter Task Description</label>
+    <textarea
+      type="text"
+      name="description"
+      placeholder="Task Description"
+      [(ngModel)]="description"
+    ></textarea>
+  </div>
+  <div class="row buttons">
+    <div class="col-md-6 col-sm-12 button">
+      <button class="button" (click)="addCard()">Add Card</button>
+    </div>
+    <div class="col-md-6 col-sm-12 button">
+      <button class="button" (click)="clearCards()">Delete Cards</button>
+    </div>
+  </div>
+</div>
+<div class="cards row" style="width: 100%">
+  <div class="col-md-4" *ngFor="let card of cards; let i = index">
+    <app-task-card
+      [title]="card.title"
+      [priority]="card.priority"
+      [description]="card.description"
+      (taskDeleted)="onTaskDeleted(i)"
+      (taskCompleted)="onTaskCompleted(i)"
+    ></app-task-card>
+  </div>
+</div>

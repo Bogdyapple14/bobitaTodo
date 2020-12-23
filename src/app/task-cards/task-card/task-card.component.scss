@@ -1,0 +1,77 @@
+.task-card {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  box-shadow: 10px 10px 0px 0px #0000001e;
+  border: 3px solid #99d9ba;
+  background: #9ea09f8e;
+  p {
+    text-align: justify;
+    color: white;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  .title {
+    font-size: 32px;
+    color: #99d9ba;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .priority {
+    font-weight: 600;
+    color: #73d6a6;
+  }
+  .priority.priorityHigh {
+    color: red;
+  }
+  .priority.priorityMedium {
+    color: sandybrown;
+  }
+  .priority.priorityLow {
+    color: rgb(15, 255, 15);
+  }
+  .delete {
+    font-size: 36px;
+    color: red;
+    cursor: pointer;
+    transition: 0.3s all;
+    &:hover {
+      color: rgb(131, 0, 0);
+    }
+  }
+  .done {
+    font-size: 36px;
+    cursor: pointer;
+    color: rgb(103, 243, 103);
+    transition: 0.3s all;
+    &:hover {
+      color: rgb(0, 138, 0);
+    }
+  }
+  .edit {
+    font-size: 36px;
+    cursor: pointer;
+    color: sandybrown;
+    &:hover {
+      color: rgb(246, 138, 43);
+    }
+  }
+  .delete,
+  .done {
+    margin-top: 6px;
+  }
+  .icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.col-md-4 {
+  padding: 0;
+}

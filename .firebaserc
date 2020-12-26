@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "bobitas-todos": {
+      "hosting": {
+        "bobitaTodo": [
+          "bobitas-todos"
+        ]
+      }
+    }
+  }
+}

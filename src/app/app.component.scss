@@ -4,13 +4,14 @@ $placeholder: #8f8f8f;
 
 .main-background {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url("../assets/eu2.jpeg");
+    url("../assets/aurora-1185464_1920.jpg");
   min-height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   overflow-x: hidden;
+  padding-top: 77px;
   .title {
     text-align: center;
     color: $primary;
@@ -23,23 +24,14 @@ $placeholder: #8f8f8f;
     padding: 0;
     animation: subtitle 3s infinite;
   }
-  @keyframes subtitle {
-    0% {
-      transform: scale(0.8);
-    }
-    50% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0.8);
-    }
-  }
 }
 
 .navbar {
   background: #333;
   border-bottom: 2px solid $primary;
   padding: 0px 5vw;
+  position: fixed;
+  z-index: 99999;
   .menu {
     display: flex;
     align-items: center;
@@ -66,5 +58,12 @@ $placeholder: #8f8f8f;
 @media (max-width: 505px) {
   .title {
     font-size: 48px !important;
+  }
+  .main-background {
+    padding: 0 !important;
+    padding-top: 77px !important;
+  }
+  .navbar {
+    padding: 0 5px;
   }
 }

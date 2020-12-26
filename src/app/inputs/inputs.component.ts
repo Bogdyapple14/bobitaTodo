@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Card } from '../task-cards/task-card/card.model';
+import { Card } from '../task-card/card.model';
 
 @Component({
   selector: 'app-inputs',

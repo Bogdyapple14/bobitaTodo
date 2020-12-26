@@ -16,6 +16,7 @@ export class TaskCardComponent implements OnInit {
     taskDescription: string;
     taskPriority: string;
   }>();
+  @Output() taskEdited = new EventEmitter();
 
   constructor() {}
 
@@ -28,6 +29,4 @@ export class TaskCardComponent implements OnInit {
   onTaskCompleted() {
     this.taskCompleted.emit();
   }
-
-  onTaskEdited() {}
 }

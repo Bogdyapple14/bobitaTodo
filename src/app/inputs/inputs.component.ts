@@ -8,7 +8,9 @@ import { Card } from '../task-cards/task-card/card.model';
 })
 export class InputsComponent implements OnInit {
   @Input() menu: boolean;
-  @Output() closeMenu = new EventEmitter<{ menu: boolean }>();
+  @Output() closeMenu = new EventEmitter<{
+    menu: boolean;
+  }>();
   title: string = '';
   description: string = '';
   priority: string = '';

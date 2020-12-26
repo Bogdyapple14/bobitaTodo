@@ -6,7 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  menu: boolean = false;
+  menu: boolean;
+  editMenu: boolean;
 
   revealMenu() {
     this.menu = true;
@@ -14,5 +15,6 @@ export class AppComponent {
 
   onCloseMenu() {
     this.menu = false;
+    this.editMenu = false;
   }
 }

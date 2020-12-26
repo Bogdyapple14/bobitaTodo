@@ -56,10 +56,15 @@ $placeholder: #8f8f8f;
     }
     i {
       font-size: 48px;
-      margin-left: 50px;
     }
   }
   img {
     height: 75px;
+  }
+}
+
+@media (max-width: 505px) {
+  .title {
+    font-size: 48px !important;
   }
 }

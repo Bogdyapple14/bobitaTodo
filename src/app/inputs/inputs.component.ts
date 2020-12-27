@@ -11,14 +11,10 @@ export class InputsComponent implements OnInit {
   @Output() closeMenu = new EventEmitter<{
     menu: boolean;
   }>();
+  isSelectOpen: boolean = false;
   title: string = '';
   description: string = '';
-  priority: string = '';
-  inputs = [
-    { placeholder: 'Enter Task Title', binding: this.title },
-    { placeholder: 'Enter Task Description', binding: this.description },
-    { placeholder: 'Enter Task Priority', binding: this.priority },
-  ];
+  priority: string = 'Medium';
   cards: Card[] = [];
 
   constructor() {}
@@ -30,7 +26,7 @@ export class InputsComponent implements OnInit {
   onCloseMenu() {
     this.closeMenu.emit();
     this.title = '';
-    this.description = '';
+    this.description = 'Medium';
     this.priority = '';
   }
 

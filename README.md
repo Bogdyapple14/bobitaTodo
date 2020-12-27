@@ -4,5 +4,5 @@ At the moment of building it, features like Pipes, Routing or rxJS are not known
 Improvements:
 
 - Completed Tasks Page ( Using Routing )
-- Edit Tasks
+- Edit Tasks - Done
 - Keyboard functionality ( Tab, Enter and Del )

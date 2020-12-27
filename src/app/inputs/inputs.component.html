@@ -49,7 +49,11 @@
       (taskCompleted)="onTaskCompleted(i)"
       (taskEdited)="onTaskEdited(i)"
     ></app-task-card>
+
     <div *ngIf="editMenu" class="inputs row">
+      <h2 class="error" style="color: brown; font-weight: 600">
+        Not Working Yet
+      </h2>
       <div class="col-12 input">
         <label for="title">Edit Task Title</label>
         <input type="text" name="title" [(ngModel)]="title" />

@@ -1,4 +1,5 @@
 <div *ngIf="menu" class="closeMenuModal" (click)="onCloseMenu()"></div>
+<div *ngIf="editMenu" class="closeMenuModal" (click)="onCloseEditMenu()"></div>
 
 <div *ngIf="menu" class="inputs row">
   <div class="col-12 input">
@@ -31,6 +32,7 @@
     <div class="col-md-6 col-sm-12 button">
       <button class="button" (click)="addCard()">Add Card</button>
     </div>
+
     <div class="col-md-6 col-sm-12 button">
       <button class="button" (click)="clearCards()">Delete Cards</button>
     </div>
@@ -45,6 +47,34 @@
       [description]="card.description"
       (taskDeleted)="onTaskDeleted(i)"
       (taskCompleted)="onTaskCompleted(i)"
+      (taskEdited)="onTaskEdited(i)"
     ></app-task-card>
+    <div *ngIf="editMenu" class="inputs row">
+      <div class="col-12 input">
+        <label for="title">Edit Task Title</label>
+        <input type="text" name="title" [(ngModel)]="title" />
+      </div>
+      <div class="col-12 input">
+        <label for="priority">Edit Task Priority</label>
+        <select name="priority" id="priority" [(ngModel)]="priority">
+          <option value="High">High</option>
+          <option value="Medium">Medium</option>
+          <option value="Low">Low</option>
+        </select>
+      </div>
+      <div class="col-12 input">
+        <label for="description">Edit Task Description</label>
+        <textarea
+          type="text"
+          name="description"
+          [(ngModel)]="description"
+        ></textarea>
+      </div>
+      <div class="row buttons">
+        <div class="col-12 button">
+          <button class="button" (click)="editTask(i)">Edit Card</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

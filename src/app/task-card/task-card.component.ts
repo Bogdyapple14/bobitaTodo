@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Card } from './card.model';
 
 @Component({
   selector: 'app-task-card',
@@ -16,7 +17,7 @@ export class TaskCardComponent implements OnInit {
     taskDescription: string;
     taskPriority: string;
   }>();
-  @Output() taskEdited = new EventEmitter();
+  @Output() taskEdited = new EventEmitter<Card>();
 
   constructor() {}
 
@@ -28,5 +29,9 @@ export class TaskCardComponent implements OnInit {
 
   onTaskCompleted() {
     this.taskCompleted.emit();
+  }
+
+  onTaskEdited() {
+    this.taskEdited.emit();
   }
 }

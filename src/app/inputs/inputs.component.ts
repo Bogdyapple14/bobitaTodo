@@ -18,6 +18,7 @@ export class InputsComponent implements OnInit {
   editMenu: boolean = false;
   cards: Card[] = [];
   editGoesOn: boolean = false;
+  cardIndex: number;
 
   constructor() {}
 
@@ -60,10 +61,15 @@ export class InputsComponent implements OnInit {
     this.title = this.cards[index].title;
     this.priority = this.cards[index].priority;
     this.description = this.cards[index].description;
+    this.cardIndex = index;
   }
 
-  editTask(index) {
-    console.log(this.cards[index]);
+  editTask() {
+    this.cards[this.cardIndex].title = this.title;
+    this.cards[this.cardIndex].description = this.description;
+    this.cards[this.cardIndex].priority = this.priority;
+    this.onCloseEditMenu();
+    this.addToLocalStorage();
   }
 
   onTaskCompleted(index) {

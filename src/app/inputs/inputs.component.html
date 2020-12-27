@@ -39,6 +39,35 @@
   </div>
 </div>
 
+<div *ngIf="editMenu" class="inputs row">
+  <h2 class="error" style="color: brown; font-weight: 600">Not Working Yet</h2>
+  <div class="col-12 input">
+    <label for="title">Edit Task Title</label>
+    <input type="text" name="title" [(ngModel)]="title" />
+  </div>
+  <div class="col-12 input">
+    <label for="priority">Edit Task Priority</label>
+    <select name="priority" id="priority" [(ngModel)]="priority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+  </div>
+  <div class="col-12 input">
+    <label for="description">Edit Task Description</label>
+    <textarea
+      type="text"
+      name="description"
+      [(ngModel)]="description"
+    ></textarea>
+  </div>
+  <div class="row buttons">
+    <div class="col-12 button">
+      <button class="button" (click)="editTask()">Edit Card</button>
+    </div>
+  </div>
+</div>
+
 <div class="cards row" style="width: 100%">
   <div class="col-md-4" *ngFor="let card of cards; let i = index">
     <app-task-card
@@ -49,36 +78,5 @@
       (taskCompleted)="onTaskCompleted(i)"
       (taskEdited)="onTaskEdited(i)"
     ></app-task-card>
-
-    <div *ngIf="editMenu" class="inputs row">
-      <h2 class="error" style="color: brown; font-weight: 600">
-        Not Working Yet
-      </h2>
-      <div class="col-12 input">
-        <label for="title">Edit Task Title</label>
-        <input type="text" name="title" [(ngModel)]="title" />
-      </div>
-      <div class="col-12 input">
-        <label for="priority">Edit Task Priority</label>
-        <select name="priority" id="priority" [(ngModel)]="priority">
-          <option value="High">High</option>
-          <option value="Medium">Medium</option>
-          <option value="Low">Low</option>
-        </select>
-      </div>
-      <div class="col-12 input">
-        <label for="description">Edit Task Description</label>
-        <textarea
-          type="text"
-          name="description"
-          [(ngModel)]="description"
-        ></textarea>
-      </div>
-      <div class="row buttons">
-        <div class="col-12 button">
-          <button class="button" (click)="editTask(i)">Edit Card</button>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
